@@ -5,7 +5,11 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV POETRY_VERSION 1.1.4
 
 RUN apt-get update \
-  && apt-get install -y build-essential libpq-dev gettext \
+  && apt-get install -y \
+    build-essential \
+    libpq-dev \
+    gettext \
+    procps \
   && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
   && rm -rf /var/lib/apt/lists/*
 
