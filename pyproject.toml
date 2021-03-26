@@ -11,6 +11,7 @@ redis = "^3.5.3"
 celery = "4.4.7"
 flower = "0.9.7"
 psycopg2-binary = "2.8.6"
+requests = "^2.25.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.2"
