@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'polls',
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -69,8 +70,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'django_celery_example.wsgi.application'
-
+ASGI_APPLICATION = 'django_celery_example.asgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
@@ -127,5 +127,18 @@ STATIC_URL = '/static/'
 
 
 # Celery settings
+
 CELERY_BROKER_URL = os.getenv('CELERY_BROKER')
 CELERY_RESULT_BACKEND = os.getenv('CELERY_BACKEND')
+
+
+# Django Channels
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [os.getenv('CHANNELS_REDIS')],
+        },
+    },
+}

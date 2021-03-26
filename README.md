@@ -1,4 +1,5 @@
-Purely educational project made to learn how to work with Celery
+### Nothing to see here
+Purely educational project made to learn how to work with Celery.
 
 ### Setup
 Store env vars in env/.dev-sample
@@ -16,4 +17,11 @@ SQL_PORT=5432
 
 CELERY_BROKER=redis://redis:6379/0
 CELERY_BACKEND=redis://redis:6379/0
+
+CHANNELS_REDIS=redis://redis:6379/0
+```
+
+### Run
+```shell
+docker-compose up -d --build
 ```
